@@ -196,7 +196,7 @@
     "yarn": "^1.22.21"
   },
   "scripts": {
-    "dev":"nodemon App.js"
+    "dev":"nodemon App.js",
     "start": "node App.js"
   },
   "author": "praveen kumar",
