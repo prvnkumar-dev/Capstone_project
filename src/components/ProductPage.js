@@ -108,20 +108,20 @@ const ProductPage=()=>{
 
     }
     const GetFilteredWheyData=async ()=>{
-        let url=`http://localhost:3030/filterWhey`
+        let url=`https://capstone-project-2-ajol.onrender.com/filterWhey`
         let {data}=await axios.post(url,filterOptions)
         SetFullWheyProteinDetail(data.result)
         SetPageNumberCount(data.PageNumberCount)
     }
     const  WheyProteinCartDetails=async ()=>{
-        let url=`http://localhost:3030/wheycartdetails`
+        let url=`https://capstone-project-2-ajol.onrender.com/wheycartdetails`
         let {data}=await axios.post(url,{UserID:userLoginId,ProductName:filterOptions.ProductName})
         SetWhey(data.result)
         SetNavBarCartCount(data.NavBarCartCount)
 
     }
     const AddWheyCart=async ()=>{
-        let url=`http://localhost:3030/addWheycart`
+        let url=`https://capstone-project-2-ajol.onrender.com/addWheycart`
         let {data}=await axios.post(url,{...AddCartItems})
             let Success="Item Added Successfully"
             toast.success(Success,{

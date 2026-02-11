@@ -36,7 +36,7 @@ const Homepage=()=>{
     })
     // let [HomeWheyProteindetail,SetHomeWheyProteindetail]=useState([])
     const  WheyProteinDetails=async ()=>{
-        let url=`http://localhost:3030/wheydetails`
+        let url=`https://capstone-project-2-ajol.onrender.com/wheydetails`
         let {data}=await axios.get(url)
         SetFullWheyProteinDetail(data.result)
         SetWheyProteinDetail(data.result.slice(0,8))
@@ -44,7 +44,7 @@ const Homepage=()=>{
        
     }
     const  WheyProteinCartDetails=async ()=>{
-        let url=`http://localhost:3030/wheycartdetails`
+        let url=`https://capstone-project-2-ajol.onrender.com/wheycartdetails`
         let {data}=await axios.post(url,{UserID:UserID})
         // SetWheyCartItems(data.result)
         // console.log(data.result)
@@ -70,7 +70,7 @@ const Homepage=()=>{
         
     // }
     const AddWheyCart=async ()=>{
-        let url=`http://localhost:3030/addWheycart`
+        let url=`https://capstone-project-2-ajol.onrender.com/addWheycart`
         let {data}=await axios.post(url,{...WheyProteinCartItems})
         data.status===true ? console.log("Item Added Successfully") :  console.log("Item Not Added")
        

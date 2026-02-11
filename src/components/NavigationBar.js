@@ -80,7 +80,7 @@ const NavigationBar=({len})=>{
         SetSelectedFileName(FileChoosen.name)
     }
     const GetUserProfileImage=async ()=>{
-        let url=`http://localhost:3030/userProfile/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/userProfile/${userLoginID}`
         let {data}=await axios.get(url)
         SetUserProfileimgName(data.result[0].ProfileImage)
         SetUserDetails({...UserDetails,
@@ -94,7 +94,7 @@ const NavigationBar=({len})=>{
         })
     }
     const SaveUserProfileImage=async (filename)=>{
-        let url=`http://localhost:3030/SaveProfileImage`
+        let url=`https://capstone-project-2-ajol.onrender.com/SaveProfileImage`
         let {data}=await axios.post(url,{filename:filename,userLoginID:userLoginID})
         if(data.status==true){
             let Success="Profile Picture Updated Successfully"
@@ -109,7 +109,7 @@ const NavigationBar=({len})=>{
     }
     const UserProfileUpload=async ()=>{
         // console.log(FileUploadSection.current)
-        let url=`http://localhost:3030/UserProfileUpload`
+        let url=`https://capstone-project-2-ajol.onrender.com/UserProfileUpload`
         let formData=new FormData()
         formData.append("file",SelectedFile)
         formData.append("filename",SelectedFileName)
@@ -125,7 +125,7 @@ const NavigationBar=({len})=>{
         SetupdatePersonaldata(false)
     }
     const UpdateUserData=async ()=>{
-        let url=`http://localhost:3030/updateUser/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/updateUser/${userLoginID}`
         let {data}=await axios.post(url,ChangeUserData)
         if(data.status==true){
             let Success="User Data Modified"
@@ -293,7 +293,7 @@ const NavigationBar=({len})=>{
         <section className="input-form">
         {/* <label htmlFor="imageupload">Click</label> */}
         <input type="file" ref={FileUploadSection} id="imageupload" className="imageupload" onChange={(event)=>{
-            // let url=`http://localhost:3030/imageupload`
+            // let url=`https://capstone-project-2-ajol.onrender.com/imageupload`
             // let {data}=axios.post(url,event.target.files[0])
             // console.log(event.target.files[0].name)
            SaveFileDetails()

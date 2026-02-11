@@ -57,7 +57,7 @@ const WorkoutTracker=()=>{
 
     }
     const GetUserProfile=async ()=>{
-        let url=`http://localhost:3030/userProfile/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/userProfile/${userLoginID}`
         let {data}=await axios.get(url)
         SetUserDetails({...UserDetails,
             UserName:data.result[0].UserName,
@@ -66,7 +66,7 @@ const WorkoutTracker=()=>{
         })
     }
     const GetExerciseDetails=async ()=>{
-        let url=`http://localhost:3030/exerciseData`
+        let url=`https://capstone-project-2-ajol.onrender.com/exerciseData`
         let {data}=await axios.get(url)
         SetExerciseData(data.result)
     }
@@ -180,7 +180,7 @@ const WorkoutTracker=()=>{
      }
      const SaveWorkouts=async ()=>{
         let Success="Workout Data Stored Successfully"
-        let url=`http://localhost:3030/saveWorkouts/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/saveWorkouts/${userLoginID}`
         let {data}=await axios.post(url,{"Date":DatefindState,"Duration":workoutTime,"Exercise":[...sessionStoredData]})
         if(data.status===true){
             ShowToastMeessege(Success,undefined)
@@ -193,7 +193,7 @@ const WorkoutTracker=()=>{
 
      }
      const  GetWorkoutHistory=async ()=>{
-        let url=`http://localhost:3030/getworkoutHistory/${sessionStorage.getItem("UserId")}`
+        let url=`https://capstone-project-2-ajol.onrender.com/getworkoutHistory/${sessionStorage.getItem("UserId")}`
         let {data}=await axios.get(url)
         SetWorkoutHistory(data.result)
 

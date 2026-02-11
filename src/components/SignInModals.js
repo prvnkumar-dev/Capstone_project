@@ -49,7 +49,7 @@ const SignInModal=({Wheycart})=>{
     }
     const signup=async ()=>{
         if(NewUser.UserName!=="" && NewUser.Email!=="" && NewUser.Password!=="" && NewUser.Phone!==""){
-        let url=`http://localhost:3030/signup`
+        let url=`https://capstone-project-2-ajol.onrender.com/signup`
         let {data}=await axios.post(url,NewUser)
         if(data.status==true){
             let Success="Registration Successfull"
@@ -77,7 +77,7 @@ const SignInModal=({Wheycart})=>{
         if(loginUser.Email!=="" && loginUser.Password !== ""){
         let DumbbellLoadingBox=document.querySelector(".login-loading-box")
         DumbbellLoadingBox.classList.add("login-loading-box-show")
-        let url=`http://localhost:3030/signin`
+        let url=`https://capstone-project-2-ajol.onrender.com/signin`
         let {data}=await axios.post(url,loginUser)
         if(data.status==true){
             let Success="Login Successfull"
@@ -106,7 +106,7 @@ const SignInModal=({Wheycart})=>{
         if(loginUser.Email!=="" && loginUser.Password !== ""){
         let DumbbellLoadingBox=document.querySelector(".login-loading-box")
         DumbbellLoadingBox.classList.add("login-loading-box-show")
-        let url=`http://localhost:3030/Adminsignin`
+        let url=`https://capstone-project-2-ajol.onrender.com/Adminsignin`
         let {data}=await axios.post(url,loginUser)
         if(data.status==true){
             let Success="Admin Login Successfull"

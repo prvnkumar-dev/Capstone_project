@@ -7,7 +7,7 @@ const ProductDetails=()=>{
     let {productDetail}=useParams()
     let [WheyProductDetail,SetWheyProductDetail]=useState()
     const GetWheyProduct=async ()=>{
-        let url=`http://localhost:3030/getWheyProduct/${productDetail}`
+        let url=`https://capstone-project-2-ajol.onrender.com/getWheyProduct/${productDetail}`
         let {data}=await axios.get(url)
         SetWheyProductDetail(data.result[0])
     }

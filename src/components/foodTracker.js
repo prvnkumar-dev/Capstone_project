@@ -66,7 +66,7 @@ const FoodTracker=()=>{
         
     }
     const GetUserProfile=async ()=>{
-        let url=`http://localhost:3030/userProfile/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/userProfile/${userLoginID}`
         let {data}=await axios.get(url)
         SetUserDetails({...UserDetails,
             UserName:data.result[0].UserName,
