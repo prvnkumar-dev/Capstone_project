@@ -69,7 +69,7 @@ const Bmicalculator=()=>{
         if(chatBotQuestion.question!==""){
         let chatBotBox=document.querySelector(".chatbot-answer-container")
         const Mypromise=new Promise(async(resolve)=>{
-            let url=`http://localhost:3030/gemini`
+            let url=`https://capstone-project-2-ajol.onrender.com/gemini`
             let {data}=await axios.post(url,chatBotQuestion)
             resolve(data)
             // SetChatBotResult(data.answer)

@@ -45,7 +45,7 @@ const CartModal=({len})=>{
     // }])
     let [OrderDetails,SetOrderDetails]=useState([])
     const GetFullCartData=async ()=>{
-        let url=`http://localhost:3030/getCartDetails/${UserId}`
+        let url=`https://capstone-project-2-ajol.onrender.com/getCartDetails/${UserId}`
         let {data}=await axios.get(url)
         SetCartData(data.result)
         SetUSerAddress(data.userAddress[0])
@@ -78,7 +78,7 @@ const CartModal=({len})=>{
         }
     }
     const DeleteCartItems=async (id,Designed_For)=>{
-        let url=`http://localhost:3030/deleteCartItem`
+        let url=`https://capstone-project-2-ajol.onrender.com/deleteCartItem`
         let {data}=await axios.post(url,{id,Designed_For,UserId})
         if(data.status===true){
             toast.success("Item deleted Scuccessfully",{
@@ -98,7 +98,7 @@ const CartModal=({len})=>{
     const MakePayment=async ()=>{
         if(DeliveryAdress.Name!=="" && DeliveryAdress.Email!=="" && DeliveryAdress.Phone!=="" && DeliveryAdress.City!=="" && DeliveryAdress.Address!=="" && DeliveryAdress.Pincode!==""){
         
-        let url=`http://localhost:3030/createOrderId`;
+        let url=`https://capstone-project-2-ajol.onrender.com/createOrderId`;
         let {data}=await axios.post(url,{Amount:FinalPrice});
         let {order}=data;
     //     SetOrderDetails({...OrderDetails,
@@ -133,10 +133,10 @@ const CartModal=({len})=>{
                };
             
             try {
-                   let url=`http://localhost:3030/verifyPayment`;
+                   let url=`https://capstone-project-2-ajol.onrender.com/verifyPayment`;
                    let {data}=await axios.post(url,SendPaymentDetail);
                    if(data.status==true){
-                    let url=`http://localhost:3030/saveOrder/${UserId}`
+                    let url=`https://capstone-project-2-ajol.onrender.com/saveOrder/${UserId}`
                     cartData.map((item,index)=>{
                         OrderDetails[index]={
                             name:item.name,

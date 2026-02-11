@@ -18,7 +18,7 @@ let [Query,SetQuery]=useState({
     Queries:""
 })
     const GetUserProfileImage=async ()=>{
-        let url=`http://localhost:3030/userProfile/${userLoginID}`
+        let url=`https://capstone-project-2-ajol.onrender.com/userProfile/${userLoginID}`
         let {data}=await axios.get(url)
         SetUserDetails({...UserDetails,
             UserName:data.result[0].UserName,
@@ -32,7 +32,7 @@ let [Query,SetQuery]=useState({
     }
     const SendUserQuery=async ()=>{
         if(Query.Queries!==""){
-        let url=`http://localhost:3030/UserQuery`
+        let url=`https://capstone-project-2-ajol.onrender.com/UserQuery`
         let {data}=await axios.post(url,Query)
         if(data.status===true){
             toast.success("Messege Sended To admin",{

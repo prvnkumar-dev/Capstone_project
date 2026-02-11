@@ -43,14 +43,14 @@ const Adminnavigation=({top})=>{
 
     }
     const GetUserDetails=async ()=>{
-        let url=`http://localhost:3030/getuserdetails`
+        let url=`https://capstone-project-2-ajol.onrender.com/getuserdetails`
         let {data}=await axios.get(url)
         SetUserDetails(data.result)
 
     }
 
     const GetProductDetais=async ()=>{
-        let url=`http://localhost:3030/filterWhey`
+        let url=`https://capstone-project-2-ajol.onrender.com/filterWhey`
         let {data}=await axios.post(url,filterOptions)
         SetProducts(data.resultsort)
         let page=Math.ceil(data.resultsort.length/3)
@@ -75,7 +75,7 @@ const Adminnavigation=({top})=>{
 
     }
     const UpdateStocks=async (id)=>{
-        let url=`http://localhost:3030/updateStock`
+        let url=`https://capstone-project-2-ajol.onrender.com/updateStock`
         let {data}=await axios.post(url,{id,NewStockqty,productname:filterOptions.ProductName})
         if(data.status===true){
             toast.success("Stock Updated Successfully",{
@@ -90,7 +90,7 @@ const Adminnavigation=({top})=>{
         GetProductDetais()
     }
     const GetUserOrders=async ()=>{
-        let url=`http://localhost:3030/getUserOrders`
+        let url=`https://capstone-project-2-ajol.onrender.com/getUserOrders`
         let {data}=await axios.get(url)
         SetUserOrders(data.result)
 
