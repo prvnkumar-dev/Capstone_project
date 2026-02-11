@@ -196,7 +196,8 @@
     "yarn": "^1.22.21"
   },
   "scripts": {
-    "start": "nodemon"
+    "dev":"nodemon app.js"
+    "start": "node app.js"
   },
   "author": "praveen kumar",
   "license": "ISC"
